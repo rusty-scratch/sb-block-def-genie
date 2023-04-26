@@ -16,6 +16,7 @@ pub struct BlockCategory {
 #[derive(Deserialize, Serialize)]
 pub struct Block {
     pub name: String,
+    pub doc: String,
     pub parameters: Vec<ParameterOrString>,
     pub block_parameters: usize,
 }
