@@ -49,7 +49,3 @@ pub enum BlockType {
     Boolean,
     C,
 }
-
-fn main() {
-    println!("Hello, world!");
-}
