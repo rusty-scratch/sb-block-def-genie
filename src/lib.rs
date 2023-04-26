@@ -3,8 +3,14 @@ use std::collections::BTreeSet;
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize)]
-pub struct Blocks {
-    pub blocks: Vec<Block>,
+pub struct Data {
+    categories: Vec<BlockCategory>,
+}
+
+#[derive(Deserialize, Serialize)]
+pub struct BlockCategory {
+    category: String,
+    blocks: Vec<Block>,
 }
 
 #[derive(Deserialize, Serialize)]
