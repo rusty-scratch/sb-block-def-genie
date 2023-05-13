@@ -58,8 +58,20 @@ checksum = "f91339c0467de62360649f8d3e185ca8de4224ff281f66000de5eb2a77a79041"
 name = "sb-block-def-genie"
 version = "0.1.0"
 dependencies = [
+ "sb-sbity",
  "serde",
  "serde_yaml",
+]
+
+[[package]]
+name = "sb-sbity"
+version = "0.6.0"
+source = "git+https://github.com/rusty-scratch/sb-sbity#4d71367d6c29312c70788dc1ca0afbb9c828868a"
+dependencies = [
+ "serde",
+ "serde_json",
+ "serde_repr",
+ "serde_tuple",
 ]
 
 [[package]]
@@ -79,7 +91,50 @@ checksum = "291a097c63d8497e00160b166a967a4a79c64f3facdd01cbd7502231688d77df"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn",
+ "syn 2.0.15",
+]
+
+[[package]]
+name = "serde_json"
+version = "1.0.96"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "057d394a50403bcac12672b2b18fb387ab6d289d957dab67dd201875391e52f1"
+dependencies = [
+ "itoa",
+ "ryu",
+ "serde",
+]
+
+[[package]]
+name = "serde_repr"
+version = "0.1.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bcec881020c684085e55a25f7fd888954d56609ef363479dc5a1305eb0d40cab"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.15",
+]
+
+[[package]]
+name = "serde_tuple"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f4f025b91216f15a2a32aa39669329a475733590a015835d1783549a56d09427"
+dependencies = [
+ "serde",
+ "serde_tuple_macros",
+]
+
+[[package]]
+name = "serde_tuple_macros"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4076151d1a2b688e25aaf236997933c66e18b870d0369f8b248b8ab2be630d7e"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
 ]
 
 [[package]]
@@ -93,6 +148,17 @@ dependencies = [
  "ryu",
  "serde",
  "unsafe-libyaml",
+]
+
+[[package]]
+name = "syn"
+version = "1.0.109"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "unicode-ident",
 ]
 
 [[package]]
