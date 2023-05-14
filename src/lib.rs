@@ -4,20 +4,6 @@ use std::{collections::BTreeSet, str::FromStr};
 #[derive(Deserialize, Serialize, PartialEq, Eq)]
 pub struct Blocks(pub Vec<Block>);
 
-impl Blocks {
-    pub fn to_string(&self) -> serde_yaml::Result<String> {
-        serde_yaml::to_string(self)
-    }
-}
-
-impl FromStr for Blocks {
-    type Err = serde_yaml::Error;
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        serde_yaml::from_str(s)
-    }
-}
-
 #[derive(Default, Deserialize, Serialize, PartialEq, Eq)]
 pub struct Block {
     pub identifier: String,
@@ -96,4 +82,38 @@ pub enum BlockType {
     },
     C,
     Menu,
+}
+
+pub fn from_str(str: &str) -> serde_yaml::Result<Blocks> {
+    serde_yaml::from_str(str)
+}
+
+pub fn from_reader<R>(reader: R) -> serde_yaml::Result<Blocks>
+where
+    R: std::io::Read,
+{
+    serde_yaml::from_reader(reader)
+}
+
+pub fn from_slice(slice: &[u8]) -> serde_yaml::Result<Blocks> {
+    serde_yaml::from_slice(slice)
+}
+
+pub fn from_yaml_value(yaml: serde_yaml::Value) -> serde_yaml::Result<Blocks> {
+    serde_yaml::from_value(yaml)
+}
+
+pub fn to_string(blocks: &Blocks) -> serde_yaml::Result<String> {
+    serde_yaml::to_string(blocks)
+}
+
+pub fn to_yaml_value(blocks: &Blocks) -> serde_yaml::Result<serde_yaml::Value> {
+    serde_yaml::to_value(blocks)
+}
+
+pub fn to_writer<W>(writer: W, blocks: &Blocks) -> serde_yaml::Result<()>
+where
+    W: std::io::Write,
+{
+    serde_yaml::to_writer(writer, blocks)
 }

@@ -1,3 +1,4 @@
 # sb-block-def-genie
 
-Read YAML data for Scratch blocks definition and generate Rust items for it
+Schema for YAML in rust struct (with no actual schema, maybe later).
+It's for my other rust scratch crate to genereate Scratch block.

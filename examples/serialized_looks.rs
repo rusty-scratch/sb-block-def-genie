@@ -31,7 +31,9 @@ fn main() {
         Block {
             identifier: "pick_random".s(),
             name: "operator_random".s(),
-            block_type: BlockType::Reporter,
+            block_type: BlockType::Reporter {
+                return_type: ParameterType::Number,
+            },
             doc: "".s(),
             parameters: vec![
                 Parameter {
@@ -73,7 +75,9 @@ fn main() {
             identifier: "touching".s(),
             name: "sensing_touchingobject".s(),
             doc: "".s(),
-            block_type: BlockType::Reporter,
+            block_type: BlockType::Reporter {
+                return_type: ParameterType::Boolean,
+            },
             parameters: vec![
                 Parameter {
                     identifier: "object".s(),
@@ -89,7 +93,7 @@ fn main() {
             ..Default::default()
         },
     ]);
-    let serialized = blocks.to_string().unwrap();
+    let serialized = sb_block_def_genie::to_string(&blocks).unwrap();
     let serialized = serialized.replace("\n- display_name", "\n\n- display_name");
     println!("{serialized}");
 }

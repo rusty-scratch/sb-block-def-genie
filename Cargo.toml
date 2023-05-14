@@ -8,10 +8,3 @@ edition = "2021"
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.9"
-sb-sbity = { git = "https://github.com/rusty-scratch/sb-sbity" }
-
-[features]
-default = ["sb-scratchy", "sb-itchy", "serde"]
-serde = []
-sb-scratchy = []
-sb-itchy = []
