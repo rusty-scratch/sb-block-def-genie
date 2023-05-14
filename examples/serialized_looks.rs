@@ -15,7 +15,7 @@ impl<T: Into<String>> ShorterIntoString for T {
 fn main() {
     let blocks = Blocks(vec![
         Block {
-            name: "motion_setx".s(),
+            opcode: "motion_setx".s(),
             identifier: "set_x".s(),
             doc: "set position in x axis to a value".s(),
             block_type: BlockType::Stack,
@@ -30,7 +30,7 @@ fn main() {
         },
         Block {
             identifier: "pick_random".s(),
-            name: "operator_random".s(),
+            opcode: "operator_random".s(),
             block_type: BlockType::Reporter {
                 return_type: ParameterType::Number,
             },
@@ -56,7 +56,7 @@ fn main() {
         },
         Block {
             identifier: "touching_menu".s(),
-            name: "sensing_touchingobjectmenu".s(),
+            opcode: "sensing_touchingobjectmenu".s(),
             doc: "".s(),
             block_type: BlockType::Menu,
             parameters: vec![Parameter {
@@ -73,7 +73,7 @@ fn main() {
         },
         Block {
             identifier: "touching".s(),
-            name: "sensing_touchingobject".s(),
+            opcode: "sensing_touchingobject".s(),
             doc: "".s(),
             block_type: BlockType::Reporter {
                 return_type: ParameterType::Boolean,

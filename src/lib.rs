@@ -7,7 +7,7 @@ pub struct Blocks(pub Vec<Block>);
 #[derive(Default, Deserialize, Serialize, PartialEq, Eq)]
 pub struct Block {
     pub identifier: String,
-    pub name: String,
+    pub opcode: String,
     #[serde(default, skip_serializing_if = "String::is_empty")]
     pub doc: String,
     #[serde(default, skip_serializing_if = "Option::is_none")]
